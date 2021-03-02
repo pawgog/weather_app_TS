@@ -1,11 +1,13 @@
+import React from 'react';
+import Label from './components/Label';
+import Weather from './components/Weather';
 import './App.css';
-import Main from './components/Main';
 
 function App() {
   return (
-    <div className="App">
-      Weather App in GraphQL
-      <Main spinnerActive />
+    <div className="weather-app">
+      <Label />
+      <Weather />
     </div>
   );
 }
