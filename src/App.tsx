@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import Label from './components/Label';
 import Weather from './components/Weather';
-import { useWeatherApi } from './common/fetchWetherData';
 import './App.css';
 
 function App() {
-  const [cityName, setCityName] = useState('');
-  const [cityData, setCityData] = useState({});
-  // const weatherData = useWeatherApi(cityName);
+  const [cityNameInput, setCityName] = useState('');
+  const [cityName, setCityData] = useState('');
 
   const handleChangeCity = (e : React.ChangeEvent<HTMLInputElement> & {
     target: HTMLButtonElement
@@ -16,10 +14,9 @@ function App() {
     setCityName(value);
   }
 
-  const handleSubmitForm = (e : React.FormEvent) => {
+  const handleSubmitForm = async (e : React.FormEvent) => {
     e.preventDefault();
-    // const weatherData = useWeatherApi(cityName);
-    setCityData(useWeatherApi(cityName));
+    setCityData(cityNameInput);
   }
 
   return (
@@ -29,7 +26,7 @@ function App() {
           <form onSubmit={handleSubmitForm}>
             <label>
               Imię:
-              <input type="text" name="name" value={cityName} onChange={handleChangeCity} />
+              <input type="text" name="name" value={cityNameInput} onChange={handleChangeCity} />
             </label>
             <input type="submit" value="Submit" />
           </form>
@@ -37,7 +34,7 @@ function App() {
       ) : (
         <div className="weather-app">
           <Label />
-          <Weather weatherData={cityData} />
+          <Weather cityName={cityName} />
         </div>
       )}
     </>
