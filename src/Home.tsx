@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Label from './components/Label';
 import Weather from './components/Weather';
-import './App.css';
+import './Home.css';
 
-function App() {
+function Home() {
   const [cityNameInput, setCityName] = useState('');
   const [cityName, setCityData] = useState('');
 
@@ -41,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
