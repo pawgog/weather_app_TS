@@ -7,10 +7,8 @@ function Home() {
   const [cityNameInput, setCityName] = useState('');
   const [cityName, setCityData] = useState('');
 
-  const handleChangeCity = (e : React.ChangeEvent<HTMLInputElement> & {
-    target: HTMLButtonElement
-  }) => {
-    const { value } = e.target;
+  const handleChangeCity = (e : React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target as HTMLButtonElement;
     setCityName(value);
   }
 
