@@ -5,7 +5,7 @@ export const useWeatherApi = (city : string) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_WEATHER_KEY}`
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_WEATHER_KEY}`
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,7 +13,7 @@ export const useWeatherApi = (city : string) => {
       setIsLoading(true);
  
       try {
-        const result = await axios(url);
+        const result = await axios(apiUrl);
         setData(result.data);
       } catch (error) {
         setIsError(true);
@@ -23,7 +23,7 @@ export const useWeatherApi = (city : string) => {
     };
  
     fetchData();
-  }, [city, url]);
+  }, [city, apiUrl]);
 
   const dataReturn = {
     data,

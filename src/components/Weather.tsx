@@ -1,3 +1,5 @@
+import Label from '../components/Label';
+import { WeatherMain } from '../style/Weather.style'
 import { useWeatherApi } from '../common/fetchWetherData';
 
 function Weather({ cityName } : { cityName: string }) {
@@ -5,9 +7,12 @@ function Weather({ cityName } : { cityName: string }) {
   console.log(data, isLoading, isError);
 
   return (
-      <div className="weather-app__main">
+    <>
+      <Label />
+      <WeatherMain>
         Main component
-      </div>
+      </WeatherMain>    
+    </>
     );
   }
 

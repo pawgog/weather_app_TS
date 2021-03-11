@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Label from './components/Label';
+import CityForm from './components/CityForm';
 import Weather from './components/Weather';
 import './Home.css';
 
@@ -18,24 +18,17 @@ function Home() {
   }
 
   return (
-    <>
+    <div className="weather-app">
       {cityName === '' ? (
-        <div className="weather-app__form">
-          <form onSubmit={handleSubmitForm}>
-            <label>
-              Imię:
-              <input type="text" name="name" value={cityNameInput} onChange={handleChangeCity} />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
+        <CityForm 
+          handleSubmitForm={handleSubmitForm}
+          handleChangeCity={handleChangeCity}
+          cityNameInput={cityNameInput}
+        />
       ) : (
-        <div className="weather-app">
-          <Label />
-          <Weather cityName={cityName} />
-        </div>
+        <Weather cityName={cityName} />
       )}
-    </>
+    </div>
   );
 }
 
