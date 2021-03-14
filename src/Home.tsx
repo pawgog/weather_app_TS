@@ -15,6 +15,11 @@ function Home() {
   const handleSubmitForm = async (e : React.FormEvent) => {
     e.preventDefault();
     setCityData(cityNameInput);
+    setCityName('');
+  }
+
+  const clearCityName = () => {
+    setCityData('');
   }
 
   return (
@@ -26,7 +31,10 @@ function Home() {
           cityNameInput={cityNameInput}
         />
       ) : (
-        <Weather cityName={cityName} />
+        <Weather 
+          cityName={cityName}
+          cleanCityName={clearCityName}
+        />
       )}
     </div>
   );
