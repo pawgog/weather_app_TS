@@ -1,5 +1,5 @@
 import React from 'react';
-import { CityFormStyle } from '../style/CityForm.style';
+import { CityFormStyle, SubmitStyled, InputStyled, LabelStyled } from '../style/CityForm.style';
 
 function CityForm({ cityNameInput, handleSubmitForm, handleChangeCity } : {
   cityNameInput: string,
@@ -9,11 +9,11 @@ function CityForm({ cityNameInput, handleSubmitForm, handleChangeCity } : {
   return (
     <CityFormStyle>
       <form onSubmit={handleSubmitForm}>
-        <label>
+        <InputStyled type="text" name="city" id="city" value={cityNameInput} onChange={handleChangeCity} />
+        <LabelStyled htmlFor="city">
           Search city:
-          <input type="text" name="name" value={cityNameInput} onChange={handleChangeCity} />
-        </label>
-        <input type="submit" value="Submit" />
+        </LabelStyled>
+        <SubmitStyled type="submit" value="Submit" />
       </form>
     </CityFormStyle>  
 )};

@@ -33,7 +33,7 @@ function Home() {
       ) : (
         <Weather 
           cityName={cityName}
-          cleanCityName={clearCityName}
+          clearCityName={clearCityName}
         />
       )}
     </div>
