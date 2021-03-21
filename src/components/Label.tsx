@@ -1,7 +1,10 @@
-function Label() {
+function Label({ cityDetails } : any) {
+  const { city } = cityDetails;
+  console.log(city);
+  
   return (
       <div className="weather-app__label">
-        Label component
+        Label component {city.name}
       </div>
     );
   }
