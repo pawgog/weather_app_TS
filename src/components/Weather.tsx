@@ -11,17 +11,24 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
 
   return (
     <>
-      {!isLoading ? (
-        <>
-          <Label cityDetails={data} />
-          <WeatherMain>
-            Main component
-            <button onClick={clearCityName}>clean</button>
-          </WeatherMain>
-        </>
+      {isError ? (
+        <div>Something went wrong!</div>
       ) : (
-        <div>Loading</div>
-      )} 
+        <>
+          {!isLoading ? (
+            <>
+              <Label cityDetails={data} />
+              <WeatherMain>
+                Main component
+                <button onClick={clearCityName}>clean</button>
+              </WeatherMain>
+            </>
+          ) : (
+            <div>Loading</div>
+          )}
+        </>
+      )}
+
     </>
   );
   }
