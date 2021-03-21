@@ -8,13 +8,19 @@ function Weather({ cityName, clearCityName } : { cityName: string, clearCityName
 
   return (
     <>
-      <Label />
-      <WeatherMain>
-        Main component
-        <button onClick={clearCityName}>clean</button>
-      </WeatherMain>    
+      {!isLoading ? (
+        <>
+          <Label cityDetails={data} />
+          <WeatherMain>
+            Main component
+            <button onClick={clearCityName}>clean</button>
+          </WeatherMain>
+        </>
+      ) : (
+        <div>Loading</div>
+      )} 
     </>
-    );
+  );
   }
 
 export default Weather;
