@@ -9,6 +9,10 @@ export interface CityFormProps {
   handleSubmitForm : React.FormEventHandler<HTMLFormElement>
 }
 
+export interface LabelProps {
+  cityDetails: TDataProps
+}
+
 export type TDataProps = {
   city: TCityProps
   cnt: number
