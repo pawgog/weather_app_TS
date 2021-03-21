@@ -4,22 +4,22 @@ import Weather from './components/Weather';
 import './Home.css';
 
 function Home() {
-  const [cityNameInput, setCityName] = useState('');
-  const [cityName, setCityData] = useState('');
+  const [cityNameInput, setCityNameInput] = useState<string>('');
+  const [cityName, setCityName] = useState<string>('');
 
   const handleChangeCity = (e : React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target as HTMLButtonElement;
-    setCityName(value);
+    const inputValue = e.target.value;
+    setCityNameInput(inputValue);
   }
 
   const handleSubmitForm = async (e : React.FormEvent) => {
     e.preventDefault();
-    setCityData(cityNameInput);
-    setCityName('');
+    setCityName(cityNameInput);
+    setCityNameInput('');
   }
 
   const clearCityName = () => {
-    setCityData('');
+    setCityName('');
   }
 
   return (

@@ -1,11 +1,7 @@
-import React from 'react';
+import { CityFormProps } from '../types/WeatherAppTypes';
 import { CityFormStyle, SubmitStyled, InputStyled, LabelStyled } from '../style/CityForm.style';
 
-function CityForm({ cityNameInput, handleSubmitForm, handleChangeCity } : {
-  cityNameInput: string,
-  handleChangeCity : React.ChangeEventHandler<HTMLInputElement>,
-  handleSubmitForm : React.FormEventHandler<HTMLFormElement>
-}) {
+function CityForm({ cityNameInput, handleSubmitForm, handleChangeCity } : CityFormProps) {
   return (
     <CityFormStyle>
       <form onSubmit={handleSubmitForm}>
