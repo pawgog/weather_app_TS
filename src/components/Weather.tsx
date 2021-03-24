@@ -1,4 +1,5 @@
 import Label from '../components/Label';
+import Loading from '../components/Loading';
 import { WeatherProps } from '../types/WeatherAppTypes';
 import { WeatherMain } from '../style/Weather.style'
 import { useWeatherApi } from '../common/fetchWetherData';
@@ -24,7 +25,7 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
               </WeatherMain>
             </>
           ) : (
-            <div>Loading</div>
+            <Loading />
           )}
         </>
       )}
