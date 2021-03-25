@@ -1,5 +1,6 @@
 import Label from '../components/Label';
-import Loading from '../components/Loading';
+import Loading from './Loading';
+import ErrorPage from './Error';
 import { WeatherProps } from '../types/WeatherAppTypes';
 import { WeatherMain } from '../style/Weather.style'
 import { useWeatherApi } from '../common/fetchWetherData';
@@ -13,7 +14,7 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
   return (
     <>
       {isError ? (
-        <div>Something went wrong!</div>
+        <ErrorPage />
       ) : (
         <>
           {!isLoading ? (

@@ -1,6 +1,8 @@
+import { LoadingStyled } from '../style/Loading.style'
+
 function Loading() {
   return (
-      <div className="weather-app__loading">
+      <LoadingStyled>
         <svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
             <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
                 <circle cx="22" cy="22" r="6" stroke-opacity="0">
@@ -42,7 +44,7 @@ function Loading() {
                 </circle>
             </g>
         </svg>
-      </div>
+      </LoadingStyled>
     );
   }
 
