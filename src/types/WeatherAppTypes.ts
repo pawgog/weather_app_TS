@@ -14,14 +14,14 @@ export interface LabelProps {
 }
 
 export interface WeatherDetailsProps {
-  weatherDetails: Array<Object>
+  weatherDetails: TDataProps
 }
 
 export type TDataProps = {
   city: TCityProps
   cnt: number
   cod: string
-  list: Array<TWeatherProps>
+  list: Array<TWeatherProps> | []
   message: number
 }
 
@@ -29,11 +29,26 @@ export type TWeatherProps = {
   clouds: {all: number}
   dt: number
   dt_txt: string
-  main: {temp: number, feels_like: number, temp_min: number, temp_max: number, pressure: number}
+  main: {
+    temp: number
+    feels_like: number
+    temp_min: number
+    temp_max: number
+    pressure: number
+    sea_level: number
+    temp_kf: number
+    grnd_level: number
+    humidity: number
+  }
   pop: number
   sys: {pod: string}
   visibility: number
-  weather: Array<Object>
+  weather: [{
+    description: string
+    icon: string
+    id: number
+    main: string
+  }]
   wind: {speed: number, deg: number}
 }
 

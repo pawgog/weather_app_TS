@@ -1,6 +1,6 @@
-// import { WeatherDetailsProps } from '../types/WeatherAppTypes';
+import { WeatherDetailsProps } from '../types/WeatherAppTypes';
 
-function WeatherDetails({ weatherDetails } : any) {
+function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
   const { list } = weatherDetails;
   console.log(list);
   
