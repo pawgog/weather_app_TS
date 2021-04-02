@@ -20,10 +20,9 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
         <>
           {!isLoading ? (
             <>
-              <Label cityDetails={data} />
+              <Label cityDetails={data} clearCityName={clearCityName} />
               <WeatherMain>
                 <WeatherDetails weatherDetails={data} />
-                <button onClick={clearCityName}>clean</button>
               </WeatherMain>
             </>
           ) : (

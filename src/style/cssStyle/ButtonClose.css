@@ -1,0 +1,58 @@
+.closeOut {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .closeInn {
+    width: inherit;
+    text-align: center;
+  }
+  
+  label { 
+    font-size: .8em; 
+    line-height: 2.3em;
+    text-transform: uppercase;
+    color: #000;
+    transition: all .3s ease-in;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .closeInn:before, .closeInn:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: inherit;
+    background: #000;
+    left: 0;
+    transition: all .3s ease-in;
+  }
+  
+  .closeInn:before {
+    top: 50%; 
+    transform: rotate(45deg);  
+  }
+  
+  .closeInn:after {  
+    bottom: 50%;
+    transform: rotate(-45deg);  
+  }
+  
+  .closeOut:hover label {
+    opacity: 1;
+  }
+  
+  .closeOut:hover .closeInn:before,
+  .closeOut:hover .closeInn:after {
+    transform: rotate(0);
+  }
+  
+  .closeOut:hover .closeInn:before {
+    top: 0;
+  }
+  
+  .closeOut:hover .closeInn:after {
+    bottom: 0;
+  }

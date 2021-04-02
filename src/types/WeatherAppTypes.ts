@@ -1,6 +1,6 @@
 export interface WeatherProps {
   cityName: string,
-  clearCityName: React.MouseEventHandler<HTMLButtonElement>
+  clearCityName: React.MouseEventHandler<HTMLDivElement>
 }
 
 export interface CityFormProps {
@@ -11,6 +11,7 @@ export interface CityFormProps {
 
 export interface LabelProps {
   cityDetails: TDataProps
+  clearCityName: React.MouseEventHandler<HTMLDivElement>
 }
 
 export interface WeatherDetailsProps {
