@@ -1,4 +1,5 @@
-import Label from '../components/Label';
+import Label from './Label';
+import WeatherDetails from './WeatherDetails';
 import Loading from './Loading';
 import ErrorPage from './Error';
 import { WeatherProps } from '../types/WeatherAppTypes';
@@ -21,7 +22,7 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
             <>
               <Label cityDetails={data} />
               <WeatherMain>
-                Main component
+                <WeatherDetails weatherDetails={data} />
                 <button onClick={clearCityName}>clean</button>
               </WeatherMain>
             </>
