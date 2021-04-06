@@ -1,11 +1,12 @@
 import { WeatherDetailsProps } from '../types/WeatherAppTypes';
+import { WeatherDetailsStyled } from '../style/WeatherDetails.style'
 
 function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
   const { list } = weatherDetails;
   console.log(list);
   
   return (
-      <div>Main Compoonent</div>
+      <WeatherDetailsStyled>Main Compoonent</WeatherDetailsStyled>
     );
   }
 
