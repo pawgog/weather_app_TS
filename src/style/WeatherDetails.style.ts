@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const WeatherDetailsStyled = styled.div`
     min-height: 200px;
     width: 50vw;
-    margin: 100px auto;
-    background: white;
+    margin: 20px;
+    background: #fff;
     border-radius: 5px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-shadow:

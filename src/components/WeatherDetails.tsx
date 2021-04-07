@@ -1,12 +1,20 @@
+import { format, fromUnixTime } from 'date-fns'
 import { WeatherDetailsProps } from '../types/WeatherAppTypes';
 import { WeatherDetailsStyled } from '../style/WeatherDetails.style'
 
 function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
   const { list } = weatherDetails;
-  console.log(list);
-  
+  const filterWeather = list.filter((item) => format(fromUnixTime(item.dt), 'HH') === '14');
+
   return (
-      <WeatherDetailsStyled>Main Compoonent</WeatherDetailsStyled>
+      <>
+        {filterWeather.map((weather) => (
+            <WeatherDetailsStyled key={weather.dt}>
+              {weather.dt_txt}
+            </WeatherDetailsStyled>
+          )
+        )}
+      </>
     );
   }
 
