@@ -11,6 +11,8 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
         {filterWeather.map((weather) => (
             <WeatherDetailsStyled key={weather.dt}>
               {weather.dt_txt}
+              <i className="wi wi-thermometer"></i>
+              <i className="wi wi-barometer"></i>
             </WeatherDetailsStyled>
           )
         )}
