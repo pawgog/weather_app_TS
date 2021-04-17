@@ -9,21 +9,28 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
 
   return (
       <>
-        {filterWeather.map((weather) => (
-            <WeatherDetailsStyled key={weather.dt}>
-              <div>{format(fromUnixTime(weather.dt), 'dd/MM/yyy')}</div>
+        {filterWeather.map(({dt, main}) => {
+          const { temp, pressure, humidity } = main;
+          return (
+            <WeatherDetailsStyled key={dt}>
               <div>
-                <i className="wi wi-thermometer"></i>{convertTempToCel(weather.main.temp)}
+                {format(fromUnixTime(dt), 'dd/MM/yyy')}
               </div>
               <div>
-                <i className="wi wi-barometer"></i>{weather.main.pressure}
+                <i className="wi wi-thermometer"></i>
+                {convertTempToCel(temp)}
               </div>
               <div>
-                <i className="wi wi-humidity"></i>{weather.main.humidity}
+                <i className="wi wi-barometer"></i>
+                {pressure}
+              </div>
+              <div>
+                <i className="wi wi-humidity"></i>
+                {humidity}%
               </div>
             </WeatherDetailsStyled>
           )
-        )}
+        })}
       </>
     );
   }
