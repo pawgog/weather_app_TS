@@ -1,6 +1,7 @@
 import { format, fromUnixTime } from 'date-fns'
 import { WeatherDetailsProps } from '../types/WeatherAppTypes';
 import { WeatherDetailsStyled } from '../style/WeatherDetails.style'
+import { convertTempToCel } from '../common/functions';
 
 function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
   const { list } = weatherDetails;
@@ -11,8 +12,15 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
         {filterWeather.map((weather) => (
             <WeatherDetailsStyled key={weather.dt}>
               <div>{format(fromUnixTime(weather.dt), 'dd/MM/yyy')}</div>
-              <i className="wi wi-thermometer"></i>
-              <i className="wi wi-barometer"></i>
+              <div>
+                <i className="wi wi-thermometer"></i>{convertTempToCel(weather.main.temp)}
+              </div>
+              <div>
+                <i className="wi wi-barometer"></i>{weather.main.pressure}
+              </div>
+              <div>
+                <i className="wi wi-humidity"></i>{weather.main.humidity}
+              </div>
             </WeatherDetailsStyled>
           )
         )}
