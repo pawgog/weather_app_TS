@@ -13,9 +13,9 @@ function Label({ cityDetails, clearCityName } : LabelProps) {
       <LabelStyled>
         {city.name} 
         <SunIconStyle>
-          <Sunrise />
+          <Sunrise fill="#fff" />
             <span>{format(fromUnixTime(city.sunrise), 'HH:mm')}</span>
-          <Sunset />
+          <Sunset fill="#fff" />
             <span>{format(fromUnixTime(city.sunset), 'HH:mm')}</span>
         </SunIconStyle>
         <div className="closeOut" onClick={clearCityName}>

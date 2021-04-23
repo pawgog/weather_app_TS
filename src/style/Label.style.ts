@@ -5,6 +5,8 @@ export const LabelStyled = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 1.3rem;
+  color: #fff;
+  background-color: #475d5b;
 `
 
 export const SunIconStyle = styled.span`

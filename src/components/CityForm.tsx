@@ -9,7 +9,7 @@ function CityForm({ cityNameInput, handleSubmitForm, handleChangeCity } : CityFo
         <LabelStyled htmlFor="city">
           Search city:
         </LabelStyled>
-        <SubmitStyled type="submit" value="Submit" />
+        <SubmitStyled type="submit" value="Submit" disabled={!cityNameInput} />
       </form>
     </CityFormStyle>  
 )};

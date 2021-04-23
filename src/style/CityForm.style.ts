@@ -9,19 +9,25 @@ export const CityFormStyle = styled.div`
     position: relative;
     display: flex;
     min-width: 400px;
+    box-shadow: 1px 3px 20px 1px rgb(0 0 0 / 30%);
   }
 `
 
 export const SubmitStyled = styled.input`
   position:relative;
   padding: 10px 20px;
-  color: #fff;
-  background-color: #4f7ff7;
+  color: #00473e;
+  background-color: #faae2b;
   outline: none;
   border: 0;
+  font-weight: bold;
   text-transform: uppercase;
   border-radius: 2px;
-  cursor: pointer;
+  transition: all .5s;
+  &:not([disabled]):hover {
+    cursor: pointer;
+    background-color: #eca833;
+  }
 `
 
 export const InputStyled = styled.input`
@@ -38,13 +44,13 @@ export const InputStyled = styled.input`
   }
   &:focus,
   &:not([value=""]) {
-    border-color: #4f7ff7;
+    border-color: #00473e;
   }
   &:focus~label,
   &:not([value=""])~label {
     font-size: 14px;
     top: -24px;
-    color: #4f7ff7;
+    color: #00473e;
   }
 `
 
