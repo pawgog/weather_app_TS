@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const LabelStyled = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 45px;
   display: flex;
   justify-content: space-around;
   align-items: center;
