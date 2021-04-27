@@ -13,20 +13,22 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
           const { temp, pressure, humidity } = main;
           return (
             <WeatherDetailsStyled key={dt}>
-              <div>
+              <div className="weather__date">
                 {format(fromUnixTime(dt), 'dd/MM/yyy')}
               </div>
-              <div>
-                <i className="wi wi-thermometer"></i>
-                {convertTempToCel(temp)}
-              </div>
-              <div>
-                <i className="wi wi-barometer"></i>
-                {pressure}
-              </div>
-              <div>
-                <i className="wi wi-humidity"></i>
-                {humidity}%
+              <div className="weather__content">
+                <div>
+                  <i className="wi wi-thermometer"></i>
+                  {convertTempToCel(temp)}
+                </div>
+                <div>
+                  <i className="wi wi-barometer"></i>
+                  {pressure}
+                </div>
+                <div>
+                  <i className="wi wi-humidity"></i>
+                  {humidity}%
+                </div>
               </div>
             </WeatherDetailsStyled>
           )
