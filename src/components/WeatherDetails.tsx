@@ -23,7 +23,7 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
                 </div>
                 <div>
                   <i className="wi wi-barometer"></i>
-                  {pressure}
+                  {pressure} hPa
                 </div>
                 <div>
                   <i className="wi wi-humidity"></i>

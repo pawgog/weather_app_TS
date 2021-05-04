@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const WeatherDetailsStyled = styled.div`
     min-height: 200px;
-    width: 50vw;
+    width: 40vw;
     margin: 20px;
     padding: 10px;
     background: #fff;
@@ -25,5 +25,14 @@ export const WeatherDetailsStyled = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        font-size: 1.3em;
+
+        & div {
+            padding: 10px 0;
+
+            & i {
+                padding-right: 10px;
+            }
+        }
     }
 `
