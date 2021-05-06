@@ -18,6 +18,9 @@ export const WeatherDetailsStyled = styled.div`
     & .weather__date {
         display: flex;
         justify-content: space-between;
+        & span:first-of-type {
+            font-weight: bold;
+        }
     }
 
     & .weather__content {
