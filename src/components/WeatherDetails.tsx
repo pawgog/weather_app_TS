@@ -9,8 +9,9 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
 
   return (
       <>
-        {filterWeather.map(({dt, main}) => {
+        {filterWeather.map(({dt, weather, main}) => {
           const { temp, pressure, humidity } = main;
+          const [ weatherDescription ] = weather
           return (
             <WeatherDetailsStyled key={dt}>
               <div className="weather__date">
