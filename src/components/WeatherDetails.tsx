@@ -30,6 +30,9 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
                   <i className="wi wi-humidity"></i>
                   {humidity}%
                 </div>
+                <div>
+                  {weatherDescription.main}
+                </div>
               </div>
             </WeatherDetailsStyled>
           )
