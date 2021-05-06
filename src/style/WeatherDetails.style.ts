@@ -21,6 +21,9 @@ export const WeatherDetailsStyled = styled.div`
         & span:first-of-type {
             font-weight: bold;
         }
+        & span:last-of-type {
+            text-decoration: underline;
+        }
     }
 
     & .weather__content {
