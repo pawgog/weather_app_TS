@@ -17,7 +17,7 @@ export const WeatherDetailsStyled = styled.div`
 
     & .weather__date {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
     }
 
     & .weather__content {

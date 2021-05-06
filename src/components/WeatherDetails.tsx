@@ -15,7 +15,8 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
           return (
             <WeatherDetailsStyled key={dt}>
               <div className="weather__date">
-                {format(fromUnixTime(dt), 'dd/MM/yyy')}
+                <span>{format(fromUnixTime(dt), 'EEEE')}</span>
+                <span>{format(fromUnixTime(dt), 'dd/MM/yyy')}</span>
               </div>
               <div className="weather__content">
                 <div>
