@@ -5,7 +5,7 @@ function CityForm({ cityNameInput, handleSubmitForm, handleChangeCity } : CityFo
   return (
     <CityFormStyle>
       <form onSubmit={handleSubmitForm}>
-        <InputStyled type="text" name="city" id="city" value={cityNameInput} onChange={handleChangeCity} />
+        <InputStyled type="text" name="city" id="city" placeholder="City name" value={cityNameInput} onChange={handleChangeCity} />
         <LabelStyled htmlFor="city">
           Search city:
         </LabelStyled>

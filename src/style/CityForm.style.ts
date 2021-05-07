@@ -34,7 +34,7 @@ export const InputStyled = styled.input`
   width: 100%;
   border: 0;
   outline: 0;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   border-bottom: 2px solid #c0c0c0;
   box-shadow: none;
   color: #111;
