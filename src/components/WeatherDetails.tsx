@@ -32,7 +32,7 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
                   {humidity}%
                 </div>
                 <div>
-                  {weatherDescription.main}
+                  {weatherDescription.main} / {weatherDescription.description}
                 </div>
               </div>
             </WeatherDetailsStyled>
