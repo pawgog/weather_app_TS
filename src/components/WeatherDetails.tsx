@@ -31,7 +31,7 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
                   <i className="wi wi-humidity"></i>
                   {humidity}%
                 </div>
-                <div>
+                <div className="weather__description">
                   {weatherDescription.main} / {weatherDescription.description}
                 </div>
               </div>

@@ -6,7 +6,7 @@ export const WeatherDetailsStyled = styled.div`
     margin: 20px;
     padding: 10px;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-shadow:
         0 -6.7px 15.3px rgb(0 0 0 / 8%), 
@@ -40,5 +40,9 @@ export const WeatherDetailsStyled = styled.div`
                 padding-right: 10px;
             }
         }
+    }
+
+    & .weather__description {
+        border-top: 1px solid black;
     }
 `
