@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const CityFormStyle = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -11,6 +12,12 @@ export const CityFormStyle = styled.div`
     min-width: 400px;
     box-shadow: 1px 3px 20px 1px rgb(0 0 0 / 30%);
   }
+`
+
+export const TitleStyled = styled.div`
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
 `
 
 export const SubmitStyled = styled.input`
