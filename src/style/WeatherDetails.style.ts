@@ -43,6 +43,7 @@ export const WeatherDetailsStyled = styled.div`
     }
 
     & .weather__description {
-        border-top: 1px solid black;
+        margin-top: 15px;
+        border-top: 3px solid rgb(0 0 0 / 10%);
     }
 `
