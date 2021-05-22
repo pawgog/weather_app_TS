@@ -10,6 +10,11 @@ export const LabelStyled = styled.div`
   padding: 1.3rem;
   color: #fff;
   background-color: #475d5b;
+
+  & > .city__name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 `
 
 export const SunIconStyle = styled.span`

@@ -28,6 +28,7 @@ export const SubmitStyled = styled.input`
   outline: none;
   border: 0;
   font-weight: bold;
+  font-family: Montserrat, Arial, serif;
   text-transform: uppercase;
   border-radius: 2px;
   transition: all .5s;
@@ -45,6 +46,7 @@ export const InputStyled = styled.input`
   border-bottom: 2px solid #c0c0c0;
   box-shadow: none;
   color: #111;
+  font-family: Montserrat, Arial, serif;
 
   &:invalid {
     outline: 0;

@@ -11,7 +11,7 @@ function Label({ cityDetails, clearCityName } : LabelProps) {
   
   return (
       <LabelStyled>
-        {city.name} 
+        <span className="city__name">{city.name}</span>
         <SunIconStyle>
           <Sunrise fill="#fff" />
             <span>{format(fromUnixTime(city.sunrise), 'HH:mm')}</span>
