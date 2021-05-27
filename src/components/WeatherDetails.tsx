@@ -24,12 +24,12 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
                   {convertTempToCel(temp)}
                 </div>
                 <div>
-                  <i className="wi wi-barometer"></i>
-                  {pressure} hPa
-                </div>
-                <div>
                   <i className="wi wi-humidity"></i>
                   {humidity}%
+                </div>
+                <div>
+                  <i className="wi wi-barometer"></i>
+                  {pressure} hPa
                 </div>
                 <div className="weather__description">
                   {weatherDescription.main} / {weatherDescription.description}

@@ -4,7 +4,7 @@ export const WeatherDetailsStyled = styled.div`
     min-height: 200px;
     width: 40vw;
     margin: 20px;
-    padding: 10px;
+    padding: 15px;
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -32,6 +32,7 @@ export const WeatherDetailsStyled = styled.div`
         align-items: center;
         flex-direction: column;
         font-size: 1.3em;
+        margin-top: -20px;
 
         & div {
             padding: 10px 0;
