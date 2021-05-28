@@ -32,7 +32,6 @@ export const WeatherDetailsStyled = styled.div`
         align-items: center;
         flex-direction: column;
         font-size: 1.3em;
-        margin-top: -20px;
 
         & div {
             padding: 10px 0;
