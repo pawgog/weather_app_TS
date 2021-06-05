@@ -2,8 +2,7 @@
 
 Weather forecast application.
 
-Project base in React.js and TypeScript, styled-components as style implementation.
-
+Project base in React.js and TypeScript.
 
 ### Instalation
 
