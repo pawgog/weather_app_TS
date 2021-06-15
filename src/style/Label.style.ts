@@ -23,5 +23,6 @@ export const SunIconStyle = styled.span`
   width: 240px;
   & span {
     min-width: 75px;
+    font-weight: 600;
   }
 `
