@@ -33,6 +33,6 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
 
     </>
   );
-  }
+}
 
 export default Weather;

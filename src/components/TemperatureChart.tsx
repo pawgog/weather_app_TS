@@ -1,12 +1,11 @@
-import { Line } from 'react-chartjs-2';
+// import { Line } from 'react-chartjs-2';
 
 function TemperatureChart() {
-    return (
-      <div>
-        <div>Chart</div>
-      </div>
-    );
-  }
-};
+  return (
+    <>
+      <div>Chart</div>
+    </>
+  );
+}
 
 export default TemperatureChart;
