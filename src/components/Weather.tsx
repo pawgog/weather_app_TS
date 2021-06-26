@@ -1,5 +1,6 @@
 import Label from './Label';
 import WeatherDetails from './WeatherDetails';
+import TemperatureChart from './TemperatureChart';
 import Loading from './Loading';
 import ErrorPage from './Error';
 import { WeatherProps } from '../types/WeatherAppTypes';
@@ -21,6 +22,7 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
           {!isLoading ? (
             <>
               <Label cityDetails={data} clearCityName={clearCityName} />
+              <TemperatureChart />
               <WeatherMain>
                 <WeatherDetails weatherDetails={data} />
               </WeatherMain>
