@@ -11,6 +11,7 @@ import { useWeatherApi } from '../common/fetchWetherData';
 
 function Weather({ cityName, clearCityName } : WeatherProps) {
   const { data, isLoading, isError } = useWeatherApi(cityName);
+  const weatherList = data.list;
   console.log(data, isLoading, isError);
 
   return (
@@ -22,7 +23,7 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
           {!isLoading ? (
             <>
               <Label cityDetails={data} clearCityName={clearCityName} />
-              <TemperatureChart />
+              <TemperatureChart weatherList={weatherList} />
               <WeatherMain>
                 <WeatherDetails weatherDetails={data} />
               </WeatherMain>

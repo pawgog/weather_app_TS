@@ -15,7 +15,11 @@ export interface LabelProps {
 }
 
 export interface WeatherDetailsProps {
-  weatherDetails: TDataProps
+  weatherDetails: TDataProps,
+}
+
+export interface WeatherChart {
+  weatherList: Array<TWeatherProps>,
 }
 
 export type TDataProps = {
