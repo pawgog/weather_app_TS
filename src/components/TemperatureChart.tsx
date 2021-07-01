@@ -1,5 +1,7 @@
-import { WeatherChart } from '../types/WeatherAppTypes';
 import { Line } from 'react-chartjs-2';
+
+import { WeatherChart } from '../types/WeatherAppTypes';
+import { LineChart } from '../style/TemperatureChart.style';
 
 function TemperatureChart({ weatherList }: WeatherChart) {
   // console.log(weatherList);
@@ -18,12 +20,12 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   }
 
   return (
-    <div>
+    <LineChart>
         <Line
           data={state}
           type='line'
         />
-    </div>
+    </LineChart>
   );
 }
 
