@@ -21,7 +21,7 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
               <div className="weather__content">
                 <div>
                   <i className="wi wi-thermometer"></i>
-                  {convertTempToCel(temp)}
+                  {convertTempToCel(temp)}°C
                 </div>
                 <div>
                   <i className="wi wi-humidity"></i>

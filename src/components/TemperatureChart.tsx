@@ -1,22 +1,33 @@
 import { Line } from 'react-chartjs-2';
+import { format, fromUnixTime } from 'date-fns'
 
 import { WeatherChart } from '../types/WeatherAppTypes';
 import { LineChart } from '../style/TemperatureChart.style';
+import { convertTempToCel } from '../common/functions';
 
 function TemperatureChart({ weatherList }: WeatherChart) {
-  // console.log(weatherList);
-  
+  const filterWeather = weatherList.filter((item) => format(fromUnixTime(item.dt), 'HH') === '14');
+  const weatherDate = filterWeather.map((list) => format(fromUnixTime(list.dt), 'EEEE'));
+  const weatherTemperature = filterWeather.map((list) => Number(convertTempToCel(list.main.temp)));
+
   const state = {
-    labels: [],
+    labels: weatherDate,
     datasets: [
       {
         label: 'Temperature',
-        backgroundColor: 'rgba(75,192,192,1)',
-        borderColor: 'rgba(0,0,0,1)',
+        backgroundColor: '#f2f7f5',
+        borderColor: '#475d5b',
         borderWidth: 2,
-        data: []
+        data: weatherTemperature
       }
-    ]
+    ],
+    options: {
+      plugins:{
+        legend: {
+         display: false
+        }
+       }
+    }
   }
 
   return (
