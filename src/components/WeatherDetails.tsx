@@ -1,11 +1,11 @@
 import { format, fromUnixTime } from 'date-fns'
 import { WeatherDetailsProps } from '../types/WeatherAppTypes';
 import { WeatherDetailsStyled } from '../style/WeatherDetails.style'
-import { convertTempToCel } from '../common/functions';
+import { convertTempToCel, filterWeatherData } from '../common/functions';
 
 function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
   const { list } = weatherDetails;
-  const filterWeather = list.filter((item) => format(fromUnixTime(item.dt), 'HH') === '14');
+  const filterWeather = filterWeatherData(list);
 
   return (
       <>
