@@ -18,13 +18,19 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         borderWidth: 2,
         data: weatherTemperature
       }
-    ],
-    options: {
-      plugins:{
-        legend: {
-         display: false
-        }
-       }
+    ]
+  }
+
+  const options = {
+    plugins:{
+      legend: {
+       display: false
+      }
+     },
+    scales: {
+      y: {
+        min: 0
+      }    
     }
   }
 
@@ -32,6 +38,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
     <LineChart>
         <Line
           data={state}
+          options={options}
           type='line'
         />
     </LineChart>
