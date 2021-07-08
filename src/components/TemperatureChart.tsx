@@ -29,7 +29,12 @@ function TemperatureChart({ weatherList }: WeatherChart) {
      },
     scales: {
       y: {
-        min: 0
+        min: 0,
+        ticks: {
+          callback: function(num: number) {
+            return num +"°C";
+          }
+        }
       }    
     }
   }
