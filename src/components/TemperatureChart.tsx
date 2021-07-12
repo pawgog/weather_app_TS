@@ -31,7 +31,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
      },
     scales: {
       y: {
-        min: 0,
+        beginAtZero: true,
         ticks: {
           callback: function(num: number) {
             return num +"°C";
