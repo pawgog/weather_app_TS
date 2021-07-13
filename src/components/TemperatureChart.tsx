@@ -26,19 +26,27 @@ function TemperatureChart({ weatherList }: WeatherChart) {
     maintainAspectRatio: false,
     plugins:{
       legend: {
-       display: false
+        display: false
+      },
+      tooltip: {
+        displayColors: false,
+        callbacks: {
+          label: function(tooltipItem: any) {
+            return `${tooltipItem['formattedValue']} °C`;
+          }
+        }
       }
-     },
+    },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
           callback: function(num: number) {
-            return num +"°C";
+            return `${num} °C`;
           }
         }
       }    
-    }
+    },
   }
 
   return (
