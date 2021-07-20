@@ -1,5 +1,6 @@
 import { Line } from 'react-chartjs-2';
 
+import Select from './Select';
 import { WeatherChart } from '../types/WeatherAppTypes';
 import { LineChart } from '../style/TemperatureChart.style';
 import { filterWeatherData, getWeatherDataArray } from '../common/functions';
@@ -51,12 +52,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
 
   return (
     <LineChart>
-        <label htmlFor="weather">Change weather details:</label>
-        <select name="weather" id="weather">
-          <option value="temp">Temperature</option>
-          <option value="humidity">Humidity</option>
-          <option value="pressure">Pressure</option>
-        </select>
+      <Select />
         <Line
           data={state}
           options={options}
