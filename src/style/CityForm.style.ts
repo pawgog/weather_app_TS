@@ -65,8 +65,8 @@ export const InputStyled = styled.input`
 
 export const LabelStyled = styled.label`
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 7px;
+  left: 7px;
   width: 100%;
   color: #c0c0c0;
   transition: 0.2s all;

@@ -6,9 +6,9 @@ function CityForm({ cityNameInput, handleSubmitForm, handleChangeCity } : CityFo
     <CityFormStyle>
       <TitleStyled>Check weather forecast in your city:</TitleStyled>
       <form onSubmit={handleSubmitForm}>
-        <InputStyled type="text" name="city" id="city" placeholder="City name" value={cityNameInput} onChange={handleChangeCity} />
+        <InputStyled type="text" name="city" id="city" value={cityNameInput} onChange={handleChangeCity} />
         <LabelStyled htmlFor="city">
-          Search city:
+          Search by city name
         </LabelStyled>
         <SubmitStyled type="submit" value="Submit" disabled={!cityNameInput} />
       </form>
