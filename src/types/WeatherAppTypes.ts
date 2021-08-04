@@ -67,3 +67,9 @@ export type TCityProps = {
   sunset: number
   timezone: number
 }
+
+export type TSelectTag = {
+  dataName: string
+  selectValues: Array<string>
+  onChangeSelect: (select : string) => void;
+}

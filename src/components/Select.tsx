@@ -1,12 +1,13 @@
+import { TSelectTag } from '../types/WeatherAppTypes';
 import { SelectStyled } from '../style/Select.style';
 
-function Select() {
+function Select({ dataName, selectValues, onChangeSelect } : TSelectTag) {
   return (
     <SelectStyled>
-      <select name="weather" id="weather">
-        <option value="temp">Temperature</option>
-        <option value="humidity">Humidity</option>
-        <option value="pressure">Pressure</option>
+      <select name={dataName} id={dataName} onChange={e => onChangeSelect(e.target.value)}>
+        {selectValues.map((selectValue) => (
+          <option value={selectValue}>{selectValue}</option>
+        ))}
       </select>      
     </SelectStyled>
     );

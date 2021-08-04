@@ -9,6 +9,11 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   const filterWeather = filterWeatherData(weatherList);
   const { weatherDate, weatherTemperature } = getWeatherDataArray(filterWeather);
 
+  const selectValues = ['temperature', 'humidity', 'pressure'];
+  const onChangeSelect = (select : string) => {
+    console.log('change value', select);
+  }
+
   const state = {
     labels: weatherDate,
     datasets: [
@@ -52,7 +57,11 @@ function TemperatureChart({ weatherList }: WeatherChart) {
 
   return (
     <LineChart>
-      <Select />
+      <Select
+        dataName='weather'
+        selectValues={selectValues}
+        onChangeSelect={onChangeSelect}
+      />
         <Line
           data={state}
           options={options}
