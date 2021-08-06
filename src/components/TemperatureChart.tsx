@@ -28,6 +28,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   }
 
   const options = {
+    type: 'line',
     responsive: true,
     maintainAspectRatio: false,
     plugins:{
@@ -65,7 +66,6 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         <Line
           data={state}
           options={options}
-          type='line'
         />
     </LineChart>
   );
