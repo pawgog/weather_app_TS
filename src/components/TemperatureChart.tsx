@@ -1,17 +1,26 @@
+import { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
 import Select from './Select';
 import { WeatherChart } from '../types/WeatherAppTypes';
 import { LineChart } from '../style/TemperatureChart.style';
-import { filterWeatherData, getWeatherDataArray } from '../common/functions';
+import { filterWeatherData, getWeatherDateArray, getWeatherTempArray } from '../common/functions';
 
 function TemperatureChart({ weatherList }: WeatherChart) {
+  const [selectData, setSelectData] = useState<Array<number>>([]);
   const filterWeather = filterWeatherData(weatherList);
-  const { weatherDate, weatherTemperature } = getWeatherDataArray(filterWeather);
+  const { weatherDate } = getWeatherDateArray(filterWeather);
+  const { weatherTemperature } = getWeatherTempArray(filterWeather);
+  const selectValues = ['temp', 'humidity', 'pressure'];
 
-  const selectValues = ['temperature', 'humidity', 'pressure'];
+  useEffect(() => {
+    setSelectData(weatherTemperature);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const onChangeSelect = (select : string) => {
     console.log('change value', select);
+
   }
 
   const state = {
@@ -22,7 +31,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         backgroundColor: '#f2f7f5',
         borderColor: '#475d5b',
         borderWidth: 2,
-        data: weatherTemperature
+        data: selectData
       }
     ]
   }
