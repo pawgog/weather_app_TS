@@ -25,7 +25,6 @@ function Weather({ cityName, clearCityName } : WeatherProps) {
               <Label cityDetails={data} clearCityName={clearCityName} />
               <TemperatureChart weatherList={weatherList} />
               <WeatherMain>
-                <h2>Weather Details</h2>
                 <WeatherDetails weatherDetails={data} />
               </WeatherMain>
             </>
