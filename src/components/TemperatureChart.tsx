@@ -20,7 +20,13 @@ function TemperatureChart({ weatherList }: WeatherChart) {
 
   const onChangeSelect = (select : string) => {
     console.log('change value', select);
-
+    const weatherSelected: any = {
+      'temp': getWeatherTempArray(filterWeather),
+      'humidity': getWeatherTempArray(filterWeather),
+      'pressure': getWeatherTempArray(filterWeather),
+    };
+    const { weatherTemperature } = weatherSelected[select];
+    setSelectData(weatherTemperature);
   }
 
   const state = {
