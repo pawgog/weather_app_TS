@@ -2,42 +2,48 @@ import { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
 import Select from './Select';
-import { WeatherChart } from '../types/WeatherAppTypes';
+import { WeatherChart, TSelectWeatherData } from '../types/WeatherAppTypes';
 import { LineChart } from '../style/TemperatureChart.style';
-import { filterWeatherData, getWeatherDateArray, getWeatherTempArray } from '../common/functions';
+import { filterWeatherData, getWeatherDateArray, getWeatherDetailsChart } from '../common/functions';
 
 function TemperatureChart({ weatherList }: WeatherChart) {
-  const [selectData, setSelectData] = useState<Array<number>>([]);
+  const [selectWeatherData, setSelectWeatherData] = useState<TSelectWeatherData>({
+    getWeatherSigned: '',
+    selectWeather: ''
+  });
+  const [selectDataArray, setSelectDataArray] = useState<Array<number>>([]);
+
   const filterWeather = filterWeatherData(weatherList);
   const { weatherDate } = getWeatherDateArray(filterWeather);
-  const { weatherTemperature } = getWeatherTempArray(filterWeather);
   const selectValues = ['temp', 'humidity', 'pressure'];
 
   useEffect(() => {
-    setSelectData(weatherTemperature);
+    const { getWeatherSelected, getWeatherSigned, selectWeather } = getWeatherDetailsChart(filterWeather, 'temp');
+    setSelectDataArray(getWeatherSelected);
+    setSelectWeatherData({
+      getWeatherSigned,
+      selectWeather
+    });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onChangeSelect = (select : string) => {
-    console.log('change value', select);
-    const weatherSelected: any = {
-      'temp': getWeatherTempArray(filterWeather),
-      'humidity': getWeatherTempArray(filterWeather),
-      'pressure': getWeatherTempArray(filterWeather),
-    };
-    const { weatherTemperature } = weatherSelected[select];
-    setSelectData(weatherTemperature);
+    const { getWeatherSelected, getWeatherSigned, selectWeather } = getWeatherDetailsChart(filterWeather, select);
+    setSelectDataArray(getWeatherSelected);
+    setSelectWeatherData({
+      getWeatherSigned,
+      selectWeather
+    });
   }
 
   const state = {
     labels: weatherDate,
     datasets: [
       {
-        label: 'Temperature',
         backgroundColor: '#f2f7f5',
         borderColor: '#475d5b',
         borderWidth: 2,
-        data: selectData
+        data: selectDataArray
       }
     ]
   }
@@ -54,7 +60,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         displayColors: false,
         callbacks: {
           label: function(tooltipItem: any) {
-            return `${tooltipItem['formattedValue']} °C`;
+            return `${tooltipItem['formattedValue']} ${selectWeatherData.getWeatherSigned}`;
           }
         }
       }
@@ -64,7 +70,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         beginAtZero: true,
         ticks: {
           callback: function(num: number) {
-            return `${num} °C`;
+            return `${num} ${selectWeatherData.getWeatherSigned}`;
           }
         }
       }    
@@ -74,7 +80,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   return (
     <LineChart>
       <Select
-        dataName='weather'
+        selectName={selectWeatherData.selectWeather}
         selectValues={selectValues}
         onChangeSelect={onChangeSelect}
       />

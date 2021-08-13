@@ -7,8 +7,7 @@ import '../style/cssStyle/ButtonClose.css';
 
 function Label({ cityDetails, clearCityName } : LabelProps) {
   const { city } = cityDetails;
-  console.log(city);
-  
+
   return (
       <LabelStyled>
         <span className="city__name">{city.name}</span>

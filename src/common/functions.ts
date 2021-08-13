@@ -16,9 +16,23 @@ export const getWeatherDateArray = (weatherList : Array<TWeatherProps>) => {
     }
 }
 
-export const getWeatherTempArray = (weatherList : Array<TWeatherProps>) => {
-    const weatherTemperature = weatherList.map((list) => Number(convertTempToCel(list.main.temp)));
+export const getWeatherDetailsChart = (weatherList : Array<TWeatherProps>, select : string) => {
+    const weatherSelected: any = {
+        'temp': weatherList.map((list) => Number(convertTempToCel(list.main.temp))),
+        'humidity': weatherList.map((list) => Number(list.main.humidity)),
+        'pressure': weatherList.map((list) => Number(list.main.pressure)),
+    };
+    const weatherSigned: any = {
+        'temp': '°C',
+        'humidity': '%',
+        'pressure': 'hPa',
+    };
+    const getWeatherSelected = weatherSelected[select];
+    const getWeatherSigned = weatherSigned[select];
+
     return {
-        weatherTemperature
+        getWeatherSelected,
+        getWeatherSigned,
+        selectWeather: select
     }
 }
