@@ -17,6 +17,7 @@ export const getWeatherDateArray = (weatherList : Array<TWeatherProps>) => {
 }
 
 export const getWeatherDetailsChart = (weatherList : Array<TWeatherProps>, select : string) => {
+    const getSelect = select === 'temperature' ? 'temp' : select;
     const weatherSelected: any = {
         'temp': weatherList.map((list) => Number(convertTempToCel(list.main.temp))),
         'humidity': weatherList.map((list) => Number(list.main.humidity)),
@@ -27,8 +28,8 @@ export const getWeatherDetailsChart = (weatherList : Array<TWeatherProps>, selec
         'humidity': '%',
         'pressure': 'hPa',
     };
-    const getWeatherSelected = weatherSelected[select];
-    const getWeatherSigned = weatherSigned[select];
+    const getWeatherSelected = weatherSelected[getSelect];
+    const getWeatherSigned = weatherSigned[getSelect];
 
     return {
         getWeatherSelected,

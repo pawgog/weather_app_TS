@@ -15,25 +15,26 @@ function TemperatureChart({ weatherList }: WeatherChart) {
 
   const filterWeather = filterWeatherData(weatherList);
   const { weatherDate } = getWeatherDateArray(filterWeather);
-  const selectValues = ['temp', 'humidity', 'pressure'];
+  const selectValues = ['temperature', 'humidity', 'pressure'];
 
   useEffect(() => {
-    const { getWeatherSelected, getWeatherSigned, selectWeather } = getWeatherDetailsChart(filterWeather, 'temp');
-    setSelectDataArray(getWeatherSelected);
-    setSelectWeatherData({
-      getWeatherSigned,
-      selectWeather
-    });
+    const selectInit = 'temp';
+    getWeatherDetails(selectInit);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onChangeSelect = (select : string) => {
-    const { getWeatherSelected, getWeatherSigned, selectWeather } = getWeatherDetailsChart(filterWeather, select);
+  const getWeatherDetails = (selectValuesDetail : string) => {
+    const { getWeatherSelected, getWeatherSigned, selectWeather } = getWeatherDetailsChart(filterWeather, selectValuesDetail);
     setSelectDataArray(getWeatherSelected);
     setSelectWeatherData({
       getWeatherSigned,
       selectWeather
     });
+  }
+
+  const onChangeSelect = (select : string) => {
+    // const getSelect = select === 'temperature' ? 'temp' : select;
+    getWeatherDetails(select);
   }
 
   const state = {
