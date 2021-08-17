@@ -33,7 +33,6 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   }
 
   const onChangeSelect = (select : string) => {
-    // const getSelect = select === 'temperature' ? 'temp' : select;
     getWeatherDetails(select);
   }
 
@@ -68,7 +67,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
     },
     scales: {
       y: {
-        beginAtZero: true,
+        beginAtZero: selectWeatherData.selectWeather !== 'pressure',
         ticks: {
           callback: function(num: number) {
             return `${num} ${selectWeatherData.getWeatherSigned}`;
