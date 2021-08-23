@@ -18,8 +18,8 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   const selectValues = ['temperature', 'humidity', 'pressure'];
 
   useEffect(() => {
-    const selectInit = 'temp';
-    getWeatherDetails(selectInit);
+    const selectInitData = 'temp';
+    getWeatherDetails(selectInitData);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -80,6 +80,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   return (
     <LineChart>
       <Select
+        dataName="weather"
         selectName={selectWeatherData.selectWeather}
         selectValues={selectValues}
         onChangeSelect={onChangeSelect}

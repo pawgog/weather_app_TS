@@ -69,6 +69,7 @@ export type TCityProps = {
 }
 
 export type TSelectTag = {
+  dataName: string
   selectName: string
   selectValues: Array<string>
   onChangeSelect: (select : string) => void;
