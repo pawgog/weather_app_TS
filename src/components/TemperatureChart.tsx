@@ -8,7 +8,7 @@ import { filterWeatherData, getWeatherDateArray, getWeatherDetailsChart } from '
 
 function TemperatureChart({ weatherList }: WeatherChart) {
   const [selectWeatherData, setSelectWeatherData] = useState<TSelectWeatherData>({
-    getWeatherSigned: '',
+    weatherSign: '',
     selectWeather: ''
   });
   const [selectDataArray, setSelectDataArray] = useState<Array<number>>([]);
@@ -24,10 +24,10 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   }, []);
 
   const getWeatherDetails = (selectValuesDetail : string) => {
-    const { getWeatherSelected, getWeatherSigned, selectWeather } = getWeatherDetailsChart(filterWeather, selectValuesDetail);
-    setSelectDataArray(getWeatherSelected);
+    const { weatherSelectedSign, weatherSign, selectWeather } = getWeatherDetailsChart(filterWeather, selectValuesDetail);
+    setSelectDataArray(weatherSelectedSign);
     setSelectWeatherData({
-      getWeatherSigned,
+      weatherSign,
       selectWeather
     });
   }
@@ -60,7 +60,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         displayColors: false,
         callbacks: {
           label: function(tooltipItem: any) {
-            return `${tooltipItem['formattedValue']} ${selectWeatherData.getWeatherSigned}`;
+            return `${tooltipItem['formattedValue']} ${selectWeatherData.weatherSign}`;
           }
         }
       }
@@ -70,7 +70,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         beginAtZero: selectWeatherData.selectWeather !== 'pressure',
         ticks: {
           callback: function(num: number) {
-            return `${num} ${selectWeatherData.getWeatherSigned}`;
+            return `${num} ${selectWeatherData.weatherSign}`;
           }
         }
       }    

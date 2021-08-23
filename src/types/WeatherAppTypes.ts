@@ -76,6 +76,6 @@ export type TSelectTag = {
 }
 
 export type TSelectWeatherData = {
-  getWeatherSigned: string
+  weatherSign: string
   selectWeather: string
 }
