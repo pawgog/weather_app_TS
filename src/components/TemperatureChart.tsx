@@ -36,6 +36,8 @@ function TemperatureChart({ weatherList }: WeatherChart) {
     getWeatherDetails(select);
   }
 
+  const { weatherSign, selectWeather } = selectWeatherData;
+
   const state = {
     labels: weatherDate,
     datasets: [
@@ -60,17 +62,17 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         displayColors: false,
         callbacks: {
           label: function(tooltipItem: any) {
-            return `${tooltipItem['formattedValue']} ${selectWeatherData.weatherSign}`;
+            return `${tooltipItem['formattedValue']} ${weatherSign}`;
           }
         }
       }
     },
     scales: {
       y: {
-        beginAtZero: selectWeatherData.selectWeather !== 'pressure',
+        beginAtZero: selectWeather !== 'pressure',
         ticks: {
           callback: function(num: number) {
-            return `${num} ${selectWeatherData.weatherSign}`;
+            return `${num} ${weatherSign}`;
           }
         }
       }    
@@ -81,7 +83,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
     <LineChart>
       <Select
         dataName="weather"
-        selectName={selectWeatherData.selectWeather}
+        selectName={selectWeather}
         selectValues={selectValues}
         onChangeSelect={onChangeSelect}
       />
