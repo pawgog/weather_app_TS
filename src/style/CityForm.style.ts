@@ -55,6 +55,12 @@ export const InputStyled = styled.input`
   &:not([value=""]) {
     border-color: #00473e;
   }
+  &:focus~label {
+    left: 0;
+  }
+  &:not(:focus)~label {
+    left: 7px;
+  }
   &:focus~label,
   &:not([value=""])~label {
     font-size: 14px;
@@ -66,7 +72,6 @@ export const InputStyled = styled.input`
 export const LabelStyled = styled.label`
   position: absolute;
   top: 7px;
-  left: 7px;
   width: 100%;
   color: #c0c0c0;
   transition: 0.2s all;
