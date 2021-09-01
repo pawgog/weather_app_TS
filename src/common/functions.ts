@@ -10,7 +10,7 @@ export const filterWeatherData = (weatherList : Array<TWeatherProps>) => {
 }
 
 export const getWeatherDateArray = (weatherList : Array<TWeatherProps>) => {
-    const weatherDate = weatherList.map((list) => format(fromUnixTime(list.dt), 'EEEE'));
+    const weatherDate = weatherList.map((list) => format(fromUnixTime(list.dt), 'EEEE (dd/MM)'));
     return {
         weatherDate
     }
