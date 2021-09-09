@@ -62,7 +62,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
         backgroundColor: '#f2f7f5',
         borderColor: '#475d5b',
         borderWidth: 2,
-        data: selectDataArray
+        data: selectDoubleDataArray
       }
     ]
   }
