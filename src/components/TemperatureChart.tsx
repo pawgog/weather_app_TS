@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 import Select from './Select';
 import { WeatherChart, TSelectWeatherData } from '../types/WeatherAppTypes';
 import { LineChart } from '../style/TemperatureChart.style';
-import { filterWeatherData, getWeatherDateArray, getWeatherDetailsChart } from '../common/functions';
+import { filterWeatherData, getWeatherDateArray, getBothTempDetailsChart, getWeatherDetailsChart } from '../common/functions';
 
 function TemperatureChart({ weatherList }: WeatherChart) {
   const [selectWeatherData, setSelectWeatherData] = useState<TSelectWeatherData>({
@@ -12,10 +12,11 @@ function TemperatureChart({ weatherList }: WeatherChart) {
     selectWeather: ''
   });
   const [selectDataArray, setSelectDataArray] = useState<Array<number>>([]);
+  const [selectDoubleDataArray, setSelectDoubleDataArray] = useState<Array<number>>([]);
 
   const filterWeather = filterWeatherData(weatherList);
   const { weatherDate } = getWeatherDateArray(filterWeather);
-  const selectValues = ['temperature', 'feels like', 'humidity', 'pressure'];
+  const selectValues = ['temperature', 'feels like', 'compare temperature', 'humidity', 'pressure'];
 
   useEffect(() => {
     const selectInitData = 'temp';
@@ -24,12 +25,22 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   }, []);
 
   const getWeatherDetails = (selectValuesDetail : string) => {
-    const { weatherSelectedSign, weatherSign, selectWeather } = getWeatherDetailsChart(filterWeather, selectValuesDetail);
-    setSelectDataArray(weatherSelectedSign);
-    setSelectWeatherData({
-      weatherSign,
-      selectWeather
-    });
+    if(selectValuesDetail !== 'compare temperature') {
+      const { weatherSelectedSign, weatherSign, selectWeather } = getWeatherDetailsChart(filterWeather, selectValuesDetail);
+      setSelectDataArray(weatherSelectedSign);
+      setSelectWeatherData({
+        weatherSign,
+        selectWeather
+      });
+    } else {
+      const { weatherTempSelected, weatherTempFeelSelected, weatherSign, selectWeather } = getBothTempDetailsChart(filterWeather);
+      setSelectDataArray(weatherTempSelected);
+      setSelectDoubleDataArray(weatherTempFeelSelected);
+      setSelectWeatherData({
+        weatherSign,
+        selectWeather
+      });
+    }
   }
 
   const onChangeSelect = (select : string) => {
@@ -41,6 +52,12 @@ function TemperatureChart({ weatherList }: WeatherChart) {
   const state = {
     labels: weatherDate,
     datasets: [
+      {
+        backgroundColor: '#f2f7f5',
+        borderColor: '#475d5b',
+        borderWidth: 2,
+        data: selectDataArray
+      },
       {
         backgroundColor: '#f2f7f5',
         borderColor: '#475d5b',
