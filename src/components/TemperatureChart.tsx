@@ -15,7 +15,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
 
   const filterWeather = filterWeatherData(weatherList);
   const { weatherDate } = getWeatherDateArray(filterWeather);
-  const selectValues = ['temperature', 'humidity', 'pressure'];
+  const selectValues = ['temperature', 'feels like', 'humidity', 'pressure'];
 
   useEffect(() => {
     const selectInitData = 'temp';
