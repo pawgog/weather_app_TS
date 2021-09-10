@@ -11,7 +11,7 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
       <>
         {filterWeather.map(({dt, weather, main}) => {
           const { temp, pressure, humidity } = main;
-          const [ weatherDescription ] = weather;
+          const [ { description, icon} ] = weather;
 
           return (
             <WeatherDetailsStyled key={dt}>
@@ -33,8 +33,9 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
                   {pressure} hPa
                 </div>
                 <div className="weather__description">
-                  <img src={`https://openweathermap.org/img/wn/${weatherDescription.icon}.png`} alt="" width="50" height="60" />
-                    {weatherDescription.main} / {weatherDescription.description}
+                  <img src={`https://openweathermap.org/img/wn/${icon}.png`} alt="" width="60" height="60" />
+                  /
+                  {description}
                 </div>
               </div>
             </WeatherDetailsStyled>
