@@ -44,22 +44,3 @@ export const getWeatherDetailsChart = (weatherList : Array<TWeatherProps>, selec
         selectWeather: select
     }
 }
-
-export const getBothTempDetailsChart = (weatherList : Array<TWeatherProps>) => {
-    const weatherTempSelected: any = {
-        'temp': weatherList.map((list) => Number(convertTempToCel(list.main.temp))),
-    };
-    const weatherTempFeelSelected: any = {
-        'feels_like': weatherList.map((list) => Number(convertTempToCel(list.main.feels_like))),
-    };
-
-    const weatherSign = '°C';
-    const selectWeather = 'temp';
-
-    return {
-        weatherTempSelected,
-        weatherTempFeelSelected,
-        weatherSign,
-        selectWeather
-    }
-}
