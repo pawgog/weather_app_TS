@@ -43,7 +43,14 @@ export const WeatherDetailsStyled = styled.div`
     }
 
     & .weather__description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-top: 15px;
         border-top: 3px solid rgb(0 0 0 / 10%);
+
+        & > span {
+            margin: 0 10px;
+        }
     }
 `
