@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const WeatherDetailsStyled = styled.div`
     min-height: 200px;
-    width: 40vw;
+    width: 25vw;
     margin: 20px;
     padding: 15px;
     background: #fff;
