@@ -61,6 +61,10 @@ function TemperatureChart({ weatherList }: WeatherChart) {
       tooltip: {
         displayColors: false,
         callbacks: {
+          title: function(tooltipItem: any) {
+            const label = tooltipItem[0].label;
+            return `${label.split(' ')[0]}`;
+          },
           label: function(tooltipItem: any) {
             return `${tooltipItem['formattedValue']} ${weatherSign}`;
           }
