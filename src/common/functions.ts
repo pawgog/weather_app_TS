@@ -21,19 +21,22 @@ export const getWeatherDetailsChart = (weatherList : Array<TWeatherProps>, selec
         'temperature': 'temp',
         'feels like': 'feels_like',
         'humidity': 'humidity',
-        'pressure': 'pressure'
+        'pressure': 'pressure',
+        'wind': 'speed'
       }[select] || 'temp';
     const weatherSelected: any = {
         'feels_like': weatherList.map((list) => Number(convertTempToCel(list.main.feels_like))),
         'temp': weatherList.map((list) => Number(convertTempToCel(list.main.temp))),
         'humidity': weatherList.map((list) => Number(list.main.humidity)),
         'pressure': weatherList.map((list) => Number(list.main.pressure)),
+        'speed': weatherList.map((list) => Number(list.wind.speed)),
     };
     const weatherSignedObject: any = {
         'feels_like': '°C',
         'temp': '°C',
         'humidity': '%',
         'pressure': 'hPa',
+        'speed': 'm/s'
     };
     const weatherSelectedSign = weatherSelected[checkSelect];
     const weatherSign = weatherSignedObject[checkSelect];
