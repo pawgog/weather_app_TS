@@ -54,7 +54,11 @@ export type TWeatherProps = {
     id: number
     main: string
   }]
-  wind: {speed: number, deg: number}
+  wind: {
+    speed: number
+    deg: number
+    gust: number
+  }
 }
 
 export type TCityProps = {
