@@ -35,7 +35,7 @@ function WeatherDetails({ weatherDetails } : WeatherDetailsProps) {
                 </div>
                 <div>
                   <i className="wi wi-strong-wind"></i>
-                  {speed} m/s
+                  {speed} m/s <i className="wi wi-wind towards-0-deg"></i>
                 </div>
                 <div className="weather__description">
                   <img src={`https://openweathermap.org/img/wn/${icon}.png`} alt="" width="60" height="60" />
