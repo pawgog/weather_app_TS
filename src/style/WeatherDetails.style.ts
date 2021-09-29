@@ -7,6 +7,7 @@ export const WeatherDetailsStyled = styled.div`
     padding: 15px;
     background: #fff;
     border-radius: 20px;
+    transition: transform .8s;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-shadow:
         0 -6.7px 15.3px rgb(0 0 0 / 8%), 
@@ -14,6 +15,10 @@ export const WeatherDetailsStyled = styled.div`
         0 12.5px 10px rgb(0 0 0 / 6%), 
         0 22.3px 17.9px rgb(0 0 0 / 4%), 
         0 41.8px 33.4px rgb(0 0 0 / 5%);
+
+    &:hover {
+        transform: scale(1.1);
+    }
 
     & .weather__date {
         display: flex;
