@@ -75,7 +75,7 @@ function TemperatureChart({ weatherList }: WeatherChart) {
       y: {
         beginAtZero: selectWeather !== 'pressure',
         ticks: {
-          callback: function(num: number) {
+          callback: function(num: string | number) {
             return `${num} ${weatherSign}`;
           }
         }
