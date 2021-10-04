@@ -12,3 +12,7 @@ Project base in React.js and TypeScript.
 - in app folder
 - `$ npm install`
 - `$ npm start`
+
+### Demo site
+
+[React weather forecast app](https://weather-forecast-21.netlify.app)
