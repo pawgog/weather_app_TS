@@ -1,8 +1,8 @@
 # Weather forecast app
 
-Weather forecast application.
+Application which display weather forecast 5 days in a row.
 
-Project base in React.js and TypeScript.
+Project base in React.js and TypeScript, Chart.js.
 
 ### Instalation
 
@@ -15,4 +15,4 @@ Project base in React.js and TypeScript.
 
 ### Demo site
 
-[React weather forecast app](https://weather-forecast-21.netlify.app)
+[Forecast weather app](https://weather-forecast-21.netlify.app)
