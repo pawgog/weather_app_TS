@@ -16,10 +16,6 @@ export const WeatherDetailsStyled = styled.div`
         0 22.3px 17.9px rgb(0 0 0 / 4%), 
         0 41.8px 33.4px rgb(0 0 0 / 5%);
 
-    &:hover {
-        transform: scale(1.1);
-    }
-
     & .weather__date {
         display: flex;
         justify-content: space-between;
